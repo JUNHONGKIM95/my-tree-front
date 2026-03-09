@@ -616,12 +616,6 @@ function HomePage() {
               {currentUser.name} ({currentUser.userId}) 님이 로그인 중입니다.
             </p>
           </div>
-
-          {activeTab === 'board' ? (
-            <button className="primary-button" onClick={handleOpenComposer} type="button">
-              글쓰기
-            </button>
-          ) : null}
         </div>
 
         <div className="home-tabs">
@@ -652,6 +646,12 @@ function HomePage() {
 
         {activeTab === 'board' ? (
           <>
+            <div className="board-toolbar">
+              <button className="primary-button" onClick={handleOpenComposer} type="button">
+                글쓰기
+              </button>
+            </div>
+
             {loadError ? <div className="feedback feedback-error">{loadError}</div> : null}
 
             <div
@@ -674,7 +674,7 @@ function HomePage() {
               {!isLoading && posts.length === 0 ? (
                 <div className="board-placeholder">
                   <strong>아직 등록된 메모가 없습니다.</strong>
-                  <span>우측 상단의 글쓰기 버튼으로 첫 게시글을 작성해 보세요.</span>
+                  <span>상단의 글쓰기 버튼으로 첫 게시글을 작성해 보세요.</span>
                 </div>
               ) : null}
 

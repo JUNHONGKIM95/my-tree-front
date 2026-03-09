@@ -289,6 +289,11 @@ button:disabled {
   gap: 8px;
 }
 
+.board-toolbar {
+  display: flex;
+  justify-content: flex-end;
+}
+
 .home-board {
   min-height: 560px;
   border: 1px solid #e5e7eb;
